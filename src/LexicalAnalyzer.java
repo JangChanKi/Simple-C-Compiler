@@ -16,6 +16,8 @@ public class LexicalAnalyzer {
         // input file
         try {
             Table table = new Table();
+            table.getNextState("IF", "T4", "i");
+            System.out.println(table.isFinalState("IF", "T4"));
 
             int ch;
             while ((ch = reader.read()) != -1) {
