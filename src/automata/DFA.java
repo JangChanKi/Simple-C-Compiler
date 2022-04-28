@@ -1,26 +1,41 @@
 package automata;
 
-
 public class DFA {
-    private boolean isFinal = false;
     private boolean isRejected = false;
+    private boolean isRunning = true;
+    private boolean isFinal = false;
+    private String name;
+    private String state = "T0";
 
-    public DFA() {
-
+    DFA(String name) {
+        this.name = name;
     }
 
-    public void setNextInput(char c) {
-
-
+    public void clear() {
+        isRejected = false;
+        isRunning = true;
+        isFinal = false;
+        state = "T0";
     }
 
-    public boolean isFinalState() {
-        return this.isFinal;
+    public void transition(String state, boolean isFinal) {
+        this.state = state;
+        this.isFinal = isFinal;
+    }
+
+    public String getState() {
+        return this.state;
     }
 
     public boolean isRejected() {
-        return this.isRejected;
+        return isRejected;
     }
 
+    public boolean isRunning() {
+        return isRunning;
+    }
 
+    public boolean isFinal() {
+        return isFinal;
+    }
 }

@@ -8,11 +8,11 @@ import java.io.BufferedReader;
 import java.io.FileReader;
 import java.io.IOException;
 
-public class Table {
+public class Transition {
     private static final int BUFFER_SIZE = 16 * 1024;
     private JSONObject jsonTable;
 
-    public Table() {
+    public Transition() {
         try {
             // read Table.json
             BufferedReader reader = new BufferedReader(
@@ -33,6 +33,7 @@ public class Table {
         }
     }
 
+    // Table.json 파일을 이용해 초기화
     private JSONObject makeJsonTable(BufferedReader reader) throws IOException, ParseException {
         JSONParser jsonParser = new JSONParser();
 
@@ -43,10 +44,10 @@ public class Table {
         }
 
         JSONObject obj = (JSONObject) jsonParser.parse(str);
-        System.out.println(obj);
         return obj;
     }
 
+    // curState 에서 input이 들어왔을 때 다음 state
     public String getNextState(String tableName, String curState, String input){
         JSONObject table = (JSONObject) jsonTable.get(tableName);
 
@@ -54,8 +55,9 @@ public class Table {
         return (String) current.get(input);
     }
 
+    // state가 final인지
     public boolean isFinalState(String tableName, String state) {
         return "true".equals(((JSONObject) ((JSONObject) jsonTable.get(tableName)).get(state)).get("final"));
     }
-    
+
 }
