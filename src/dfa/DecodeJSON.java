@@ -9,7 +9,7 @@ public class DecodeJSON {
     private JSONObject table;
     private JSONParser parser = new JSONParser();
     
-    DecodeJSON(){
+    public DecodeJSON(){
         try{
             InputStream l = getClass().getResourceAsStream("/DFATable.json");
             table = (JSONObject) parser.parse(new InputStreamReader(l));

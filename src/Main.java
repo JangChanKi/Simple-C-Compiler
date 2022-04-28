@@ -4,15 +4,22 @@ import java.util.*;
 public class Main {
 
     public static void main(String[] args) throws IOException {
+        String line;
+        String fileInfo = "";
 
+        //파일 확인
         if(args.length == 0){
             System.out.println("파일이 없습니다");
-            System.exit(2);
         }
         File f = new File(args[0]);
 
-        LexicalAnalyzer lexicalAnalyzer = new LexicalAnalyzer(f);
-        lexicalAnalyzer.run();
+        //파일 정보 fileInfo에 저장
+        BufferedReader br = new BufferedReader(new FileReader(f));
+        while((line = br.readLine()) != null){
+            fileInfo += line;
+        }
+        br.close();
 
+        LexicalAnalyzer lexicalAnalyzer = new LexicalAnalyzer(fileInfo);
     }
 }
