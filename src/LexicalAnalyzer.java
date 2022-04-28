@@ -22,9 +22,8 @@ public class LexicalAnalyzer {
         while((line = br.readLine()) != null){
             fileInfo += line;
         }
-
-        //DFA dfa = new DFA(fileInfo);
-
         br.close();
+
+
     }
 }

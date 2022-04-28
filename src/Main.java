@@ -3,7 +3,7 @@ import java.util.*;
 
 public class Main {
 
-    public static void main(String[] args) {
+    public static void main(String[] args) throws IOException {
 
         if(args.length == 0){
             System.out.println("파일이 없습니다");
@@ -11,7 +11,8 @@ public class Main {
         }
         File f = new File(args[0]);
 
-
+        LexicalAnalyzer lexicalAnalyzer = new LexicalAnalyzer(f);
+        lexicalAnalyzer.run();
 
     }
 }
