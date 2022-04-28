@@ -20,8 +20,9 @@ public class LexicalAnalyzer {
             int ch;
             while ((ch = reader.read()) != -1) {
                 automata.setNextInput((char) ch);
-
             }
+            // end character
+            automata.setNextInput((char) -1);
         } catch (IOException e) {
             e.printStackTrace();
         }

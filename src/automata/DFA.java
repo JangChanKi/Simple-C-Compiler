@@ -58,6 +58,14 @@ public class DFA {
         return isRejected;
     }
 
+    public void reject() {
+        if (!this.isRejected) {
+            this.isRejected = true;
+            this.isRunning = false;
+            rejectCount++;
+        }
+    }
+
     public boolean isRunning() {
         return isRunning;
     }
