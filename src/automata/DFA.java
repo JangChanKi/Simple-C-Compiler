@@ -1,9 +1,13 @@
 package automata;
 
 public class DFA {
+    // finalcount, rekjectcount, finalflag 논 필요
+    private static int finalCount = 0;
+    public static int rejectCount = 0;
     private boolean isRejected = false;
     private boolean isRunning = true;
     private boolean isFinal = false;
+    private boolean finalFlag = true;
     private String name;
     private String state = "T0";
 
@@ -15,20 +19,30 @@ public class DFA {
         isRejected = false;
         isRunning = true;
         isFinal = false;
+        finalFlag = true;
+        finalCount = 0;
+        rejectCount = 0;
         state = "T0";
     }
 
     public void transition(char input) {
         String next = Transition.getNextState(this.name, this.state, ""+input);
         // reject
-        if (next == null) {
+        if (next == null && !this.isRejected) {
             this.isRejected = true;
             this.isRunning = false;
+            rejectCount++;
         }
         else {
             // next state
             this.state = next;
-            this.isFinal = Transition.isFinalState(this.name, this.state);
+            // final state 도달
+            if (Transition.isFinalState(this.name, this.state) && finalFlag) {
+                this.isFinal = true;
+                finalCount++;
+                finalFlag = false;
+            }
+
         }
     }
 
