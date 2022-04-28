@@ -1,5 +1,6 @@
 package automata;
 
+import groovyjarjarantlr4.v4.runtime.misc.Nullable;
 import org.json.simple.JSONObject;
 import org.json.simple.parser.JSONParser;
 import org.json.simple.parser.ParseException;
@@ -10,7 +11,7 @@ import java.io.IOException;
 
 public class Transition {
     private static final int BUFFER_SIZE = 16 * 1024;
-    private JSONObject jsonTable;
+    public static JSONObject jsonTable;
 
     public Transition() {
         try {
@@ -34,6 +35,7 @@ public class Transition {
     }
 
     // Table.json 파일을 이용해 초기화
+    @Nullable
     private JSONObject makeJsonTable(BufferedReader reader) throws IOException, ParseException {
         JSONParser jsonParser = new JSONParser();
 
@@ -48,7 +50,8 @@ public class Transition {
     }
 
     // curState 에서 input이 들어왔을 때 다음 state
-    public String getNextState(String tableName, String curState, String input){
+    @Nullable
+    public static String getNextState(String tableName, String curState, String input) {
         JSONObject table = (JSONObject) jsonTable.get(tableName);
 
         JSONObject current = (JSONObject) table.get(curState);
@@ -56,7 +59,7 @@ public class Transition {
     }
 
     // state가 final인지
-    public boolean isFinalState(String tableName, String state) {
+    public static boolean isFinalState(String tableName, String state) {
         return "true".equals(((JSONObject) ((JSONObject) jsonTable.get(tableName)).get(state)).get("final"));
     }
 

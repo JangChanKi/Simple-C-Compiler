@@ -1,11 +1,13 @@
 import automata.Automata;
+import automata.Transition;
 
 import java.io.FileReader;
 import java.io.IOException;
 
 public class LexicalAnalyzer {
     private final FileReader reader;
-
+    private final static Transition transition = new Transition();
+    private final Automata automata = new Automata();
 
     public LexicalAnalyzer (FileReader reader) {
         this.reader = reader;
@@ -17,7 +19,7 @@ public class LexicalAnalyzer {
 
             int ch;
             while ((ch = reader.read()) != -1) {
-                Automata dfa = new Automata();
+                automata.setNextInput((char) ch);
 
             }
         } catch (IOException e) {
