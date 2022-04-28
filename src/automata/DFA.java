@@ -18,9 +18,22 @@ public class DFA {
         state = "T0";
     }
 
-    public void transition(String state, boolean isFinal) {
-        this.state = state;
-        this.isFinal = isFinal;
+    public void transition(char input) {
+        String next = Transition.getNextState(this.name, this.state, ""+input);
+        // reject
+        if (next == null) {
+            this.isRejected = true;
+            this.isRunning = false;
+        }
+        else {
+            // next state
+            this.state = next;
+            this.isFinal = Transition.isFinalState(this.name, this.state);
+        }
+    }
+
+    public String getName() {
+        return this.name;
     }
 
     public String getState() {
