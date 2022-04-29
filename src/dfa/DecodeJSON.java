@@ -11,7 +11,7 @@ public class DecodeJSON {
     
     public DecodeJSON(){
         try{
-            InputStream l = getClass().getResourceAsStream("/DFATable.json");
+            InputStream l = getClass().getResourceAsStream("/dfa/DFATable.json");
             table = (JSONObject) parser.parse(new InputStreamReader(l));
         } catch (Exception error){
             System.out.println(error);

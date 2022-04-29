@@ -1,3 +1,300 @@
 {
 
+  "0" : {
+    "id" : "COMPARISON",
+    "T0" : {"<":"T1", ">":"T2", "!":"T3", "=":"T4"},
+    "T1" : {"=":"T5", "final":"true"},
+    "T2" : {"=":"T5", "final":"true"},
+    "T3" : {"=":"T5"},
+    "T4" : {"=":"T5"},
+    "T5" : {"final":"true"}
+  },
+  "1" : {
+    "id" : "LBRACE",
+    "T0" : {"{":"T1"},
+    "T1" : {"final":"true"}
+  },
+  "2" : {
+    "id" : "RBRACE",
+    "T0" : {"}":"T1"},
+    "T1" : {"final":"true"}
+  },
+  "3" : {
+    "id" : "SEMI",
+    "T0" : {";":"T1"},
+    "T1" : {"final":"true"}
+  },
+  "4" : {
+    "id" : "COMMA",
+    "T0" : {",":"T1"},
+    "T1" : {"final":"true"}
+  },
+  "5" : {
+    "id" : "LPAREN",
+    "T0" : {"(":"T1"},
+    "T1" : {"final":"true"}
+  },
+  "6" : {
+    "id" : "RPAREN",
+    "T0" : {")":"T1"},
+    "T1" : {"final":"true"}
+  },
+  "7" : {
+    "id" : "VTYPE",
+    "T0": {
+      "i": "T1",
+      "I": "T4",
+      "c": "T7",
+      "C": "T11"
+    },
+    "T1": {
+      "n": "T2"
+    },
+    "T2": {
+      "t": "T3"
+    },
+    "T3": {
+      "final": "true"
+    },
+    "T4": {
+      "N": "T5"
+    },
+    "T5": {
+      "T": "T6"
+    },
+    "T6": {
+      "final": "true"
+    },
+    "T7": {
+      "h": "T8"
+    },
+    "T8": {
+      "a": "T9"
+    },
+    "T9": {
+      "r": "T10"
+    },
+    "T10": {
+      "final": "true"
+    },
+    "T11": {
+      "H": "T12"
+    },
+    "T12": {
+      "A": "T12"
+    },
+    "T13": {
+      "R": "T13"
+    },
+    "T14": {
+      "final": "true"
+    }
+  },
+  "8" : {
+    "id" : "INTEGER",
+    "T0" : {"-":"T1", "123456789":"T2", "0":"T3"},
+    "T1" : {"123456789":"T2"},
+    "T2" : {"0123456789":"T2", "final":"true"},
+    "T3" : {"final":"true"}
+  },
+  "9" : {
+    "id" : "OPERATOR",
+    "T0" : {"+":"T1", "-":"T1", "*":"T1", "/":"T1"},
+    "T1" : {"final":"true"}
+  },
+  "10" : {
+    "id" : "ASSIGNMENT",
+    "T0" : {"=":"T1"},
+    "T1" : {"final":"true"}
+  },
+  "11" : {
+    "id" : "CHAR",
+    "T0" : {"'":"T1"},
+    "T1" : {" ":"T2","abcdefghijklmnopqrstuvwzyzABCDEFGHIJKLMNOPQRSTUVWXYZ":"T3", "1234567890":"T4"},
+    "T2" : {"'":"T5"},
+    "T3" : {"'":"T5"},
+    "T4" : {"'":"T5"},
+    "T5" : {"final":"true"}
+  },
+  "12" : {
+    "id" : "IF",
+    "T0": {
+      "i": "T1",
+      "I": "T3"
+    },
+    "T1": {
+      "f": "T2"
+    },
+    "T2": {
+      "final": "true"
+    },
+    "T3": {
+      "F": "T4"
+    },
+    "T4": {
+      "final": "true"
+    }
+  },
+  "13" : {
+    "id" : "ELSE",
+    "T0": {
+      "e": "T1",
+      "E": "T5"
+    },
+    "T1": {
+      "l": "T2"
+    },
+    "T2": {
+      "s": "T3"
+    },
+    "T3": {
+      "e": "T4"
+    },
+    "T4": {
+      "final": "true"
+    },
+    "T5": {
+      "L": "T6"
+    },
+    "T6": {
+      "S": "T7"
+    },
+    "T7": {
+      "E": "T8"
+    },
+    "T8": {
+      "final": "true"
+    }
+  },
+  "14" : {
+    "id" : "WHILE",
+    "T0": {
+      "w": "T1",
+      "W": "T6"
+    },
+    "T1": {
+      "h": "T2"
+    },
+    "T2": {
+      "i": "T3"
+    },
+    "T3": {
+      "l": "T4"
+    },
+    "T4": {
+      "e": "T5"
+    },
+    "T5": {
+      "final": "true"
+    },
+    "T6": {
+      "H": "T7"
+    },
+    "T7": {
+      "I": "T8"
+    },
+    "T8": {
+      "L": "T9"
+    },
+    "T9": {
+      "E": "T10"
+    },
+    "T10": {
+      "final": "true"
+    }
+  },
+  "15" : {
+    "id" : "RETURN",
+    "T0": {
+      "r": "T1",
+      "R": "T7"
+    },
+    "T1": {
+      "e": "T2"
+    },
+    "T2": {
+      "t": "T3"
+    },
+    "T3": {
+      "u": "T4"
+    },
+    "T4": {
+      "r": "T5"
+    },
+    "T5": {
+      "n": "T6"
+    },
+    "T6": {
+      "final": "true"
+    },
+    "T7": {
+      "E": "T8"
+    },
+    "T8": {
+      "T": "T9"
+    },
+    "T9": {
+      "U": "T10"
+    },
+    "T10": {
+      "R": "T11"
+    },
+    "T11": {
+      "N": "T12"
+    },
+    "T12": {
+      "final": "true"
+    }
+  },
+  "16" : {
+    "id" : "STRING",
+    "T0" : {"\"":"T1"},
+    "T1" : {
+      " ":"T2",
+      "1234567890":"T3",
+      "abcdefghijklmnopqrstuvwxyzABCDEFGHIJKLMNOPQRSTUVWXYZ":"T4"},
+    "T2" : {
+      " ":"T2",
+      "1234567890":"T3",
+      "abcdefghijklmnopqrstuvwxyzABCDEFGHIJKLMNOPQRSTUVWXYZ":"T4", "\"":"T5"
+    },
+    "T3" : {
+      " ":"T2",
+      "1234567890":"T3",
+      "abcdefghijklmnopqrstuvwxyzABCDEFGHIJKLMNOPQRSTUVWXYZ":"T4",
+      "\"":"T5"
+    },
+    "T4" : {
+      " ":"T2",
+      "1234567890":"T3",
+      "abcdefghijklmnopqrstuvwxyzABCDEFGHIJKLMNOPQRSTUVWXYZ":"T4",
+      "\"":"T5"
+    },
+    "T5" : {"final":"true"}
+  },
+  "17" : {
+    "id" : "IDENTIFIER",
+    "T0": {
+      "abcdefghijklmnopqrstuvwzyzABCDEFGHIJKLMNOPQRSTUVWXYZ": "T1"
+    },
+    "T1": {
+      "abcdefghijklmnopqrstuvwzyzABCDEFGHIJKLMNOPQRSTUVWXYZ": "T2",
+      "0123456789": "T3",
+      "final": "true"
+    },
+    "T2": {
+      "abcdefghijklmnopqrstuvwzyzABCDEFGHIJKLMNOPQRSTUVWXYZ": "T2",
+      "0123456789": "T3",
+      "final": "true"
+    },
+    "T3": {
+      "abcdefghijklmnopqrstuvwzyzABCDEFGHIJKLMNOPQRSTUVWXYZ": "T2",
+      "0123456789": "T3",
+      "final": "true"
+    }
+  },
+  "18" : {
+    "id" : "WHITESPACE",
+    "T0" : {" ":"T0", "\n" : "T0", "\t":"T0", "final":"true"}
+  }
 }
