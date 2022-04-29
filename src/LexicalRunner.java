@@ -2,7 +2,7 @@ import automata.Transition;
 
 import java.io.*;
 
-public class TestRun {
+public class LexicalRunner {
 
     public static void main(String[] args) throws IOException {
         int i = 0;
