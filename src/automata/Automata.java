@@ -1,5 +1,6 @@
 package automata;
 
+
 import groovyjarjarantlr4.v4.runtime.misc.Nullable;
 
 import java.util.ArrayList;
@@ -14,8 +15,8 @@ public class Automata {
     private final DFA dfaInt;
 
     private String lexeme = "";
-    private String prevLexeme = "";
-    private String prevInput = "";
+    private String prevToken = "";
+    private char prevInput = 0;
 
     public Automata() {
         DFAList = new DFA[insName.length];
@@ -36,6 +37,7 @@ public class Automata {
     (만약 final에 도달한 DFA가 없다면, 에러로 인식한다)
     '-' 는 앞의 토큰이 INTEGER, STRING, ID, RPAREN일 때는 INT DFA를 reject 시켜서 OP로 인식시킨다.
      */
+
     @Nullable
     public Token setNextInput(char input) {
         ArrayList<DFA> finalDFAList = new ArrayList<>();
@@ -46,14 +48,16 @@ public class Automata {
         transitionDFA(input);
 
         // - : OP인지/INTEGER 인지
-        if(prevInput.equals("-")) {
-            if (prevLexeme.equals("INTEGER") || prevLexeme.equals("STRING") || prevLexeme.equals("ID") || prevLexeme.equals("RPAREN")) {
+        if(prevInput == '-') {
+            if (prevToken.equals("INTEGER") || prevToken.equals("STRING") || prevToken.equals("ID") || prevToken.equals("RPAREN")) {
                 dfaInt.reject();
             } else {
                 dfaOP.reject();
             }
 
         }
+        // 현재 input을 prev에 저장 (- 처리 위해서)
+        prevInput = input;
 
         // 모든 DFA가 reject됨
         if (DFA.rejectCount == DFAList.length) {
@@ -68,7 +72,7 @@ public class Automata {
             // 이전 결과 저장 (- 처리를 위해서)
             String prev = finalDFAList.get(0).getName();
             if (!prev.equals("WHITESPACE"))
-                prevLexeme = prev;
+                prevToken = prev;
 
             clearAll(); //Initialize all dfa
 
@@ -83,9 +87,6 @@ public class Automata {
         else {
             lexeme += input;
         }
-
-        // 현재 input을 prev에 저장 (- 처리 위해서)
-        prevInput = ""+input;
         return null;
     }
 
