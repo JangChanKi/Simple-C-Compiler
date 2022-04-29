@@ -1,18 +1,37 @@
-import java.io.FileReader;
-import java.io.IOException;
+import automata.Transition;
+
+import java.io.*;
 
 public class TestRun {
 
     public static void main(String[] args) throws IOException {
         int i = 0;
+        Transition.init();
 
         while (i < args.length) {
-            FileReader fileReader = new FileReader("./test_case/" +args[i++]);
+            try {
+                // file reader 생성
+                FileReader fileReader = new FileReader("./test_case/" + args[i]);
+                // file writer 생성
+                String outName = args[i];
+                if (args[i].split("\\.").length > 0)
+                    outName = args[i].split("\\.")[0];
+                // Output 파일 이름 결정
+                BufferedWriter bufferedWriter = new BufferedWriter(new FileWriter("./test_case" + outName + ".out"));
 
-            LexicalAnalyzer lexicalAnalyzer = new LexicalAnalyzer(fileReader);
-            lexicalAnalyzer.run();
+                LexicalAnalyzer lexicalAnalyzer = new LexicalAnalyzer(fileReader, bufferedWriter);
+
+                lexicalAnalyzer.run();
+
+                // 정상 종료
+                fileReader.close();
+                bufferedWriter.close();
+            } catch (IOException e) {
+                e.printStackTrace();
+            }
+            i++;
         }
-        System.out.print("모든 파일에 대해 실행이 완료되었습니다.");
+        System.out.print("Execution is complete for "+i+" files.");
 
     }
 }

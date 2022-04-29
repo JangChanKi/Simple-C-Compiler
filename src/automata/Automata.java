@@ -1,82 +1,109 @@
 package automata;
 
-import javax.swing.text.html.HTMLDocument;
+import groovyjarjarantlr4.v4.runtime.misc.Nullable;
+
 import java.util.ArrayList;
 
 public class Automata {
-    private final DFA[] DFAList;
     private final String[] insName = {"IF", "ELSE","WHILE","RETURN","VTYPE","OP","INTEGER","STRING",
             "COMPARISON","ASSIGN","SEMI","LBRACE","RBRACE","LPAREN","RPAREN","COMMA","WHITESPACE","ID"};
+    private final DFA[] DFAList;
+
+    // - 처리를 위해서 따로 분류
+    private final DFA dfaOP;
+    private final DFA dfaInt;
+
     private String lexeme = "";
-    private String prevInput;
+    private String prevLexeme = "";
+    private String prevInput = "";
 
     public Automata() {
         DFAList = new DFA[insName.length];
 
-        for (int i=0;i< insName.length;i++){
+        for (int i=0; i< insName.length; i++){
             DFAList[i] = new DFA(insName[i]);
         }
+
+        // - 처리를 위해 사용하는 dfa(op, int)를 쉽게 인식할 수 있도록 저장
+        dfaOP = DFAList[5];
+        dfaInt = DFAList[6];
     }
 
-    public void setNextInput(char input) {
+    /*
+    LexicalAnalyzer에서 입력된 input으로 DFA들을 진행시키는 메소드
+    모든 DFA가 reject 되었을 때 그 전 상태에서 final에 도달한 DFA들 중
+    가장 우선순위가 높은 것을 token으로 인식한다.
+    (만약 final에 도달한 DFA가 없다면, 에러로 인식한다)
+    '-' 는 앞의 토큰이 INTEGER, STRING, ID, RPAREN일 때는 INT DFA를 reject 시켜서 OP로 인식시킨다.
+     */
+    @Nullable
+    public Token setNextInput(char input) {
         ArrayList<DFA> finalDFAList = new ArrayList<>();
 
-        transitionDFA(finalDFAList, input);
+        // 현재 final state에 도달한 dfa들 목록
+        setFinalDFAs(finalDFAList);
+        // 현재 input에 대해 transition 진행
+        transitionDFA(input);
+
+        // - : OP인지/INTEGER 인지
+        if(prevInput.equals("-")) {
+            if (prevLexeme.equals("INTEGER") || prevLexeme.equals("STRING") || prevLexeme.equals("ID") || prevLexeme.equals("RPAREN")) {
+                dfaInt.reject();
+            } else {
+                dfaOP.reject();
+            }
+
+        }
 
         // 모든 DFA가 reject됨
         if (DFA.rejectCount == DFAList.length) {
             if (finalDFAList.isEmpty()) {
                 System.out.println("오류가 발생했습니다.");
-                return;
+                return new Token("", "", true);
             }
 
             // 직전 final인 것중 가장 우선순위 높은 것
-            System.out.println("<"+finalDFAList.get(0).getName()+"," + lexeme + ">");
+            Token ret = new Token(finalDFAList.get(0).getName(), lexeme);
 
             // 이전 결과 저장 (- 처리를 위해서)
             String prev = finalDFAList.get(0).getName();
             if (!prev.equals("WHITESPACE"))
-                prevInput = prev;
+                prevLexeme = prev;
 
             clearAll(); //Initialize all dfa
 
             // 현재 input부터 dfa 동작
             finalDFAList.clear();
+            setFinalDFAs(finalDFAList);
             lexeme += input;
-            transitionDFA(finalDFAList, input);
+            transitionDFA(input);
+
+            return ret;
         }
         else {
             lexeme += input;
         }
 
-        // - 처리
-        checkMinus(input);
+        // 현재 input을 prev에 저장 (- 처리 위해서)
+        prevInput = ""+input;
+        return null;
     }
 
-    private void transitionDFA(ArrayList<DFA> finalDFAList, char input) {
-        for (int i=0; i< DFAList.length; i++) {
+    // transition 전에 final state에 도달한 dfa를 저장
+    private void setFinalDFAs(ArrayList<DFA> finalDFAList) {
+        for (int i=0; i<DFAList.length; i++) {
 
-            // transition 전에 final state에 도달한 dfa를 저장
             if (DFAList[i].isFinal() && !DFAList[i].isRejected())
                 finalDFAList.add(DFAList[i]);
-
-            // 모든 dfa에 대해서 현재 input으로 transition 진행
-            if (DFAList[i].isRunning())
-                DFAList[i].transition(input);
         }
     }
 
-    private void checkMinus(char input) {
-        if (input == '-') {
-            // int, string, id, rparen -> op로 인식
-            if (prevInput.equals("INTEGER") || prevInput.equals("STRING") || prevInput.equals("ID") || prevInput.equals("RPAREN")) {
-                // INTEGER reject
-                DFAList[6].reject();
-            } else {
-                // OP reject
-                DFAList[5].reject();
-            }
+    // 모든 dfa에 대해서 현재 input으로 transition 진행
+    private void transitionDFA(char input) {
+        for (int i=0; i< DFAList.length; i++) {
 
+            if (DFAList[i].isRunning())
+                DFAList[i].transition(input);
         }
     }
 
