@@ -25,7 +25,7 @@ public class Transition {
         try {
             // read Table.json
             BufferedReader reader = new BufferedReader(
-                    new FileReader("./src/table/Table.json"),
+                    new FileReader("./table/Table.json"),
                     BUFFER_SIZE
             );
 

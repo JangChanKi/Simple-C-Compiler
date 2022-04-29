@@ -20,6 +20,7 @@ public class LexicalAnalyzer {
         // input file
         try {
 
+            int prevCh = 0;
             int ch;
             while ((ch = fReader.read()) != -1) {
                 Token result = automata.setNextInput((char) ch);
@@ -28,7 +29,7 @@ public class LexicalAnalyzer {
                     // token으로 아직 인식되지 않았을 때
                 } else if (result.getErrorOccur()) {
                     // 해당 input에서 오류가 발생한 경우
-                    fWriter.write("!----- error occurred at input: "+(char) ch+" ------>\n");
+                    fWriter.write("<!----- error occurred at input: "+(char) prevCh+" ------>\n");
                     fWriter.write("Output is not possible from this line.. ");
                     break;
                 } else {
@@ -37,10 +38,10 @@ public class LexicalAnalyzer {
                         fWriter.write("<"+result.getTokenName()+", "+result.getLexeme()+">\n");
                 }
 
-
+                prevCh = ch;
             }
             // end character
-            automata.setNextInput((char) -1);
+            automata.setNextInput((char) 0);
         } catch (IOException e) {
             e.printStackTrace();
         }

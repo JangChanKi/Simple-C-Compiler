@@ -17,7 +17,7 @@ public class LexicalRunner {
                 if (args[i].split("\\.").length > 0)
                     outName = args[i].split("\\.")[0];
                 // Output 파일 이름 결정
-                BufferedWriter bufferedWriter = new BufferedWriter(new FileWriter("./test_case" + outName + ".out"));
+                BufferedWriter bufferedWriter = new BufferedWriter(new FileWriter("./test_case/"+outName + ".out"));
 
                 LexicalAnalyzer lexicalAnalyzer = new LexicalAnalyzer(fileReader, bufferedWriter);
 
