@@ -7,6 +7,9 @@ import lexical.Token;
 import java.io.BufferedWriter;
 import java.io.FileReader;
 import java.io.IOException;
+import java.util.ArrayList;
+import java.util.Iterator;
+import java.util.List;
 
 public class LexicalAnalyzer implements Runnable {
     private final FileReader fReader;
@@ -15,11 +18,11 @@ public class LexicalAnalyzer implements Runnable {
 
     private final String fileName;
 
-    private String symbolTable = "";
+    private final ArrayList<Token> symbolTable = new ArrayList<Token>();
 
     private boolean accepted = true;
 
-    public LexicalAnalyzer (String fileName, FileReader reader, BufferedWriter bufferedWriter) {
+    public LexicalAnalyzer (final String fileName, final FileReader reader, final BufferedWriter bufferedWriter) {
         this.fileName = fileName;
         this.fReader = reader;
         this.fWriter = bufferedWriter;
@@ -50,15 +53,22 @@ public class LexicalAnalyzer implements Runnable {
                 } else {
                     // whitespace token은 제외
                     if (!result.getTokenName().equals("WHITESPACE"))
-                        symbolTable = symbolTable + "<"+result.getTokenName()+", "+result.getLexeme()+">\n";
+                        symbolTable.add(result);
                 }
 
                 prevCh = ch;
             }
 
             // create .out file if accepted
-            if (accepted)
-                fWriter.write(symbolTable);
+            if (accepted) {
+                Iterator iter = symbolTable.iterator();
+
+                while (iter.hasNext()) {
+                    Token token = (Token) iter.next();
+                    String curLine = "<" + token.getTokenName() + ", " + token.getLexeme() + ">\n";
+                    fWriter.write(curLine);
+                }
+            }
 
             // end character
             //automata.setNextInput((char) 0);
@@ -72,6 +82,10 @@ public class LexicalAnalyzer implements Runnable {
 
     public boolean getAccepted() {
         return this.accepted;
+    }
+
+    public final ArrayList<Token> getSymbolTable() {
+        return this.symbolTable;
     }
 
 }
