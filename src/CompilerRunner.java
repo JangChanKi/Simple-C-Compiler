@@ -18,19 +18,25 @@ public class CompilerRunner {
                 if (args[i].split("\\.").length > 0)
                     outName = args[i].split("\\.")[0];
                 // Output 파일 이름 결정
-                FileWriter fileWriter = new FileWriter("." + File.separator + "test_case" + File.separator +outName + ".out");
+                File fileOut = new File("." + File.separator + "test_case" + File.separator +outName + ".out");
+                FileWriter fileWriter = new FileWriter(fileOut);
                 BufferedWriter bufferedWriter = new BufferedWriter(fileWriter);
 
                 LexicalAnalyzer lexicalAnalyzer = new LexicalAnalyzer(args[i], fileReader, bufferedWriter);
                 lexicalAnalyzer.run();
 
+                // error 발생 -> file delete
+                if (!lexicalAnalyzer.getAccepted())
+                    fileOut.delete();
+
                 // 정상 종료
                 fileReader.close();
                 bufferedWriter.close();
                 fileWriter.close();
+
             } catch (FileNotFoundException e) {
                 // file이 없을 경우
-                System.out.println("The file does not exist : "+args[i++]);
+                System.out.println("The file does not exist : "+args[i++] + "\n");
                 fail++;
                 continue;
             } catch (IOException e) {
