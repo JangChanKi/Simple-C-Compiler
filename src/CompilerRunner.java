@@ -2,9 +2,9 @@ import automata.Transition;
 
 import java.io.*;
 
-public class LexicalRunner {
+public class CompilerRunner {
 
-    public static void main(String[] args) throws IOException {
+    public static void main(String[] args) {
         int i = 0;
         Transition.init();
 

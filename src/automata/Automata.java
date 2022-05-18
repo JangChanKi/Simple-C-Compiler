@@ -82,6 +82,14 @@ public class Automata {
             lexeme += input;
             transitionDFA(input);
 
+            // string token은 " " 기호 제거
+            if (ret.getTokenName().equals("STRING")) {
+                String curLexeme = ret.getLexeme();
+                ret = new Token(
+                        ret.getTokenName(),
+                        curLexeme.substring(1, curLexeme.length()-1)
+                );
+            }
             return ret;
         }
         else {
