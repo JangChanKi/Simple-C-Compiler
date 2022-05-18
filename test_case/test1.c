@@ -1,5 +1,5 @@
 int foo(char num, int d) {
-        -0
+        -0 iF
         while (1<d){
              int a = d+2;
              int b123 = -23 * a / 3 -2;

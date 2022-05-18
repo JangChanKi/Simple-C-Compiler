@@ -1,4 +1,4 @@
-package automata;
+package lexical;
 
 /*
 name에서 어떤 테이블인지를 구분하고 (ex VTYPE, LPAREN)

@@ -1,4 +1,4 @@
-package automata;
+package lexical;
 
 
 import groovyjarjarantlr4.v4.runtime.misc.Nullable;

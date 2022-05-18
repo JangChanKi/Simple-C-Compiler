@@ -1,4 +1,4 @@
-package automata;
+package lexical;
 
 /*
 인식된 토큰을 테이블 파일로 저장하기 위한 structure

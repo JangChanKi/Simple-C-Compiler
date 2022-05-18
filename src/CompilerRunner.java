@@ -1,4 +1,5 @@
-import automata.Transition;
+import lexical.LexicalAnalyzer;
+import lexical.Transition;
 
 import java.io.*;
 

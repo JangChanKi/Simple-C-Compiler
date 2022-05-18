@@ -1,6 +1,8 @@
-import automata.Automata;
-import automata.DFA;
-import automata.Token;
+package lexical;
+
+import lexical.Automata;
+import lexical.DFA;
+import lexical.Token;
 
 import java.io.BufferedWriter;
 import java.io.FileReader;
