@@ -1,4 +1,5 @@
 import automata.Automata;
+import automata.DFA;
 import automata.Token;
 import automata.Transition;
 
@@ -6,16 +7,20 @@ import java.io.BufferedWriter;
 import java.io.FileReader;
 import java.io.IOException;
 
-public class LexicalAnalyzer {
+public class LexicalAnalyzer implements Runnable {
     private final FileReader fReader;
     private final BufferedWriter fWriter;
     private final Automata automata = new Automata();
 
-    public LexicalAnalyzer (FileReader reader, BufferedWriter bufferedWriter) {
+    private final String fileName;
+
+    public LexicalAnalyzer (String fileName, FileReader reader, BufferedWriter bufferedWriter) {
+        this.fileName = fileName;
         this.fReader = reader;
         this.fWriter = bufferedWriter;
     }
 
+    @Override
     public void run() {
         // input file
         try {
@@ -46,7 +51,7 @@ public class LexicalAnalyzer {
             e.printStackTrace();
         }
 
-
+        DFA.clearRejectCount();
 
     }
 
