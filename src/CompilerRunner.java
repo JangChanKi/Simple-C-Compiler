@@ -1,4 +1,5 @@
 import lexical.LexicalAnalyzer;
+import lexical.Token;
 import lexical.Transition;
 import syntax.SyntaxAnalyzer;
 
