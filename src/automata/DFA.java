@@ -75,4 +75,8 @@ public class DFA {
     public boolean isFinal() {
         return isFinal;
     }
+
+    public static void clearRejectCount() {
+        rejectCount = 0;
+    }
 }

@@ -62,7 +62,6 @@ public class Automata {
         // 모든 DFA가 reject됨
         if (DFA.rejectCount == DFAList.length) {
             if (finalDFAList.isEmpty()) {
-                System.out.println("오류가 발생했습니다.");
                 return new Token("", "", true);
             }
 
@@ -82,6 +81,14 @@ public class Automata {
             lexeme += input;
             transitionDFA(input);
 
+            // string token은 " " 기호 제거
+            if (ret.getTokenName().equals("STRING")) {
+                String curLexeme = ret.getLexeme();
+                ret = new Token(
+                        ret.getTokenName(),
+                        curLexeme.substring(1, curLexeme.length()-1)
+                );
+            }
             return ret;
         }
         else {
