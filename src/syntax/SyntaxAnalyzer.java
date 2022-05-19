@@ -47,36 +47,35 @@ public class SyntaxAnalyzer implements Runnable {
                 accepted = false;
             }
             else {
+
+                // accept
+                if (decision.equals("acc")) {
+                    accepted = true;
+                    break;
+                }
+
                 char op = decision.charAt(0);                                                   // s or c
                 int value = Integer.parseInt(decision.substring(1));                  // [num]
 
-                //System.out.println(splitter + " " + nextSymbol + " " + decision);
                 // action : shift and goto
                 if (op == 's') {
-                    stateStack.push(value);     // push the next state into the stack
+                    stateStack.push(value);         // push the next state into the stack
                     if (!epsilonMoved)
                         splitter++;                 // move the splitter to the right
                 }
                 // action : reduce
                 else if (op == 'r') {
 
-                    //System.out.println(LRTable.getNumOfRHS(value));
                     // pop number of RHS items from stack
                     for (int i = 0; i < LRTable.getNumOfRHS(value); i++)
                         stateStack.pop();
 
-                    //System.out.println("AAQ "+stateStack.peek()+" "+LRTable.getLHS(value));
                     int nextState = LRTable.getGoto(stateStack.peek(), LRTable.getLHS(value));              // goto table
                     // rejected
                     if (nextState == -1)
                         accepted = false;
                     else
                         stateStack.push(nextState);
-                }
-                // accept
-                else if (decision.equals("acc")) {
-                    accepted = true;
-                    break;
                 }
             }
 

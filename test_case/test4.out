@@ -1,9 +1,10 @@
 <VTYPE, int>
-<ID, a>
+<ID, foo>
 <LPAREN, (>
 <RPAREN, )>
 <LBRACE, {>
-<RETURN, return>
-<ID, asdf>
+<ID, a>
+<ASSIGN, =>
+<INTEGER, 0>
 <SEMI, ;>
 <RBRACE, }>

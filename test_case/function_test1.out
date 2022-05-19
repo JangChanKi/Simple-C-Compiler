@@ -54,3 +54,4 @@
 <RETURN, return>
 <ID, result>
 <SEMI, ;>
+<RBRACE, }>

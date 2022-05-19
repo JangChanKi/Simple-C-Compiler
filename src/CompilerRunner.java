@@ -53,6 +53,11 @@ public class CompilerRunner {
                 SyntaxAnalyzer syntaxAnalyzer = new SyntaxAnalyzer(args[i], lexicalAnalyzer.getSymbolTable());
                 syntaxAnalyzer.run();
 
+                // syntax accept
+                if (syntaxAnalyzer.getAccepted()) {
+                    System.out.println("Successfully accepted for file " + args[i] + "\n");
+                }
+
                 // 정상 종료
                 fileReader.close();
                 bufferedWriter.close();

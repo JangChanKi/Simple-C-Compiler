@@ -18,6 +18,8 @@ public class Automata {
     private String prevToken = "";
     private char prevInput = 0;
 
+    private int prevLine = 1;
+
     public Automata() {
         DFAList = new DFA[insName.length];
 
@@ -62,11 +64,14 @@ public class Automata {
         // 모든 DFA가 reject됨
         if (DFA.rejectCount == DFAList.length) {
             if (finalDFAList.isEmpty()) {
-                return new Token("", "",  true, lineNum);
+                return new Token("", "",  true, -1);
             }
 
             // 직전 final인 것중 가장 우선순위 높은 것
-            Token ret = new Token(finalDFAList.get(0).getName(), lexeme, lineNum);
+            Token ret = new Token(finalDFAList.get(0).getName(), lexeme, prevLine);
+
+            // 현재 lineNum을 prev에 저장
+            prevLine = lineNum;
 
             // 이전 결과 저장 (- 처리를 위해서)
             String prev = finalDFAList.get(0).getName();

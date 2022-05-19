@@ -36,7 +36,17 @@ public class LexicalAnalyzer implements Runnable {
             int lineNum = 1;
             int prevCh = 0;
             int ch;
-            while ((ch = fReader.read()) != -1) {
+            boolean eFlag = false;
+
+            while (true) {
+                ch = fReader.read();
+                // to deal last symbol
+                if (ch == -1) {
+                    eFlag = true;
+                    ch = 0;
+                }
+
+                // count line number
                 if (ch == '\n')
                     lineNum++;
 
@@ -57,6 +67,9 @@ public class LexicalAnalyzer implements Runnable {
                 }
 
                 prevCh = ch;
+
+                if (eFlag)
+                    break;
             }
 
             // create .out file if accepted
