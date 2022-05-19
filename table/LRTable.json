@@ -165,5 +165,184 @@
     "e": "s20",
     "comma": "s19",
     "MOREARGS": "49"
+  },
+  "36": {
+    "e": "r4",
+    "vtype" : "r4"
+  },
+  "37": {
+    "semi": "s50"
+  },
+  "38": {
+    "id": "s39",
+    "lparen": "s38",
+    "num": "s40",
+    "EXPR": "51",
+    "TERM": "44",
+    "FACTOR": "45"
+  },
+  "39": {
+    "semi": "r22",
+    "rparen": "r22",
+    "addsub": "r22",
+    "multdiv": "r22",
+    "comp": "r22"
+  },
+  "40": {
+    "semi": "r23",
+    "rparen": "r23",
+    "addsub": "r23",
+    "multdiv": "r23",
+    "comp": "r23"
+  },
+  "41": {
+    "semi": "s52"
+  },
+  "42": {
+    "semi": "r15"
+  },
+  "43": {
+    "semi": "r16"
+  },
+  "44": {
+    "semi": "r18",
+    "rparen": "r18",
+    "addsub": "s53"
+  },
+  "45": {
+    "semi": "r20",
+    "rparen": "r20",
+    "addsub": "r20",
+    "multdiv": "s54"
+  },
+  "46": {
+    "rparen": "s55"
+  },
+  "47": {
+    "comp": "s56"
+  },
+  "48": {
+    "rparen": "s57"
+  },
+  "49": {
+    "rparen": "r7"
+  },
+  "50": {
+    "rbrace": "r25"
+  },
+  "51": {
+    "rparen": "s58"
+  },
+  "52": {
+    "e": "r12",
+    "vtype": "r12",
+    "semi": "r12",
+    "if": "r12",
+    "while": "r12"
+  },
+  "53": {
+    "id": "s39",
+    "lparen": "s38",
+    "num": "s40",
+    "EXPR": "59",
+    "TERM": "44",
+    "FACTOR": "45"
+  },
+  "54": {
+    "id": "s39",
+    "lparen": "s38",
+    "num": "s40",
+    "TERM": "60",
+    "FACTOR": "45"
+  },
+  "55": {
+    "lbrace": "s61"
+  },
+  "56": {
+    "id": "s39",
+    "lparen": "s38",
+    "num": "s40",
+    "FACTOR": "62"
+  },
+  "57": {
+    "lbrace": "s63"
+  },
+  "58": {
+    "semi": "r21",
+    "rparen": "r21",
+    "addsub": "r21",
+    "multdiv": "r21",
+    "comp": "r21"
+  },
+  "59": {
+    "semi": "r17",
+    "rparen": "r17"
+  },
+  "60": {
+    "semi": "r19",
+    "rparen": "r19",
+    "addsub": "r19"
+  },
+  "61": {
+    "e": "s23",
+    "vtype": "s2",
+    "id": "s25",
+    "if": "s26",
+    "while": "s27",
+    "VDECL": "24",
+    "BLOCK": "64",
+    "STMT": "22"
+  },
+  "62": {
+    "rparen": "r24"
+  },
+  "63": {
+    "e": "s23",
+    "vtype": "s2",
+    "id": "s25",
+    "if": "s26",
+    "while": "s27",
+    "VDECL": "24",
+    "BLOCK": "65",
+    "STMT": "22"
+  },
+  "64": {
+    "rbrace": "s66"
+  },
+  "65": {
+    "rbrace": "s67"
+  },
+  "66": {
+    "else": "s68"
+  },
+  "67": {
+    "e": "r14",
+    "vtype": "r14",
+    "id": "r14",
+    "if": "r14",
+    "while": "r14"
+  },
+  "68": {
+    "lbrace": "s69"
+  },
+  "69": {
+    "e": "s23",
+    "vtype": "s2",
+    "id": "s25",
+    "if": "s26",
+    "while": "s27",
+    "VDECL": "24",
+    "BLOCK": "70",
+    "STMT": "22"
+  },
+  "70": {
+    "rbrace": "s71"
+  },
+  "71": {
+    "e": "r13",
+    "vtype": "r13",
+    "id": "r13",
+    "if": "r13",
+    "while": "r13"
   }
 }
