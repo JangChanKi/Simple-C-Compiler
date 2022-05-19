@@ -16,22 +16,32 @@ epsilon treats it as 'e', and rejects if there is no transition corresponding to
  */
 public class LRTable {
 
-    public static final String FILE_NAME = "." + File.separator + "table" + File.separator + "LRTable.json";
+    public static final String FILE_NAME_LR_TABLE = "." + File.separator + "table" + File.separator + "LRTable.json";
+    public static final String FILE_NAME_LHS = "." + File.separator + "table" + File.separator + "LHS.json";
 
-    private static JSONObject jsonTable;
+    private static JSONObject lrTable;
+
+    private static JSONObject lhs;
 
     public static void init() throws FileNotFoundException {
        // json file
-        JSONTableGenerator jsonTableGenerator = new JSONTableGenerator(FILE_NAME);
+        JSONTableGenerator lrTableGenerator = new JSONTableGenerator(FILE_NAME_LR_TABLE);       // LR Table
+        JSONTableGenerator lhsGenerator = new JSONTableGenerator(FILE_NAME_LHS);                // LHS of productions
 
-        jsonTable = jsonTableGenerator.getJSONTable();
+        lrTable = lrTableGenerator.getJSONTable();
+        lhs = lhsGenerator.getJSONTable();
     }
 
     @Nullable
     public static String getActionOrGoto(final int curState, final String input) {
-        JSONObject state = (JSONObject) jsonTable.get(""+curState);
+        JSONObject state = (JSONObject) lrTable.get(""+curState);
 
         return (String) state.get(input);
+    }
+
+    @Nullable
+    public static String getLHS(final int prodNum) {
+        return (String) lhs.get(""+prodNum);
     }
 
 }
