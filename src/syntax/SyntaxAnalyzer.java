@@ -50,7 +50,6 @@ public class SyntaxAnalyzer implements Runnable {
                 char op = decision.charAt(0);                                                   // s or c
                 int value = Integer.parseInt(decision.substring(1));                  // [num]
 
-                //System.out.println(splitter + " " + nextSymbol + " " + decision);
                 // action : shift and goto
                 if (op == 's') {
                     stateStack.push(value);     // push the next state into the stack
@@ -60,12 +59,10 @@ public class SyntaxAnalyzer implements Runnable {
                 // action : reduce
                 else if (op == 'r') {
 
-                    //System.out.println(LRTable.getNumOfRHS(value));
                     // pop number of RHS items from stack
                     for (int i = 0; i < LRTable.getNumOfRHS(value); i++)
                         stateStack.pop();
 
-                    //System.out.println("AAQ "+stateStack.peek()+" "+LRTable.getLHS(value));
                     int nextState = LRTable.getGoto(stateStack.peek(), LRTable.getLHS(value));              // goto table
                     // rejected
                     if (nextState == -1)
