@@ -2,11 +2,8 @@ package syntax;
 
 import groovyjarjarantlr4.v4.runtime.misc.Nullable;
 import org.json.simple.JSONObject;
-import org.json.simple.parser.JSONParser;
 import util.JSONTableGenerator;
-
 import java.io.*;
-import java.text.ParseException;
 
 /*
 The LRTable class initially needs to init once for file IO.
@@ -17,12 +14,11 @@ r[num] : reduce by production # num
 acc : accept
 epsilon treats it as 'e', and rejects if there is no transition corresponding to the input in json.
  */
-
 public class LRTable {
 
     public static final String FILE_NAME = "." + File.separator + "table" + File.separator + "LRTable.json";
 
-    public static JSONObject jsonTable;
+    private static JSONObject jsonTable;
 
     public static void init() throws FileNotFoundException {
        // json file
@@ -31,6 +27,11 @@ public class LRTable {
         jsonTable = jsonTableGenerator.getJSONTable();
     }
 
+    @Nullable
+    public static String getActionOrGoto(final int curState, final String input) {
+        JSONObject state = (JSONObject) jsonTable.get(""+curState);
 
+        return (String) state.get(input);
+    }
 
 }
