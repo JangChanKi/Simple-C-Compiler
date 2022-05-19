@@ -30,18 +30,19 @@ public class SyntaxAnalyzer implements Runnable {
 
             // next input symbol
             String nextSymbol = symbolTable.get(splitter).toTerminal();
-            String decision = LRTable.getActionOrGoto(stateStack.peek(), nextSymbol);
+            String decision = LRTable.getAction(stateStack.peek(), nextSymbol);
 
             // invalid transition -> reject
             if (decision == null || decision.length() < 1) {
                 System.out.println("Error occurred in file " + fileName);
-                System.out.println("Syntax error " + symbolTable.get(splitter).getLexeme());
+                System.out.println("Syntax error : " + symbolTable.get(splitter).getLexeme());
                 accepted = false;
             }
             else {
-                char op = decision.charAt(0);
-                int value = Integer.parseInt(decision.substring(1));
+                char op = decision.charAt(0);                                                   // s or c
+                int value = Integer.parseInt(decision.substring(1));                  // [num]
 
+                System.out.println(splitter + " " + decision);
                 // action : shift and goto
                 if (op == 's') {
                     stateStack.push(value);     // push the next state into the stack
@@ -49,18 +50,23 @@ public class SyntaxAnalyzer implements Runnable {
                 }
                 // action : reduce
                 else if (op == 'r') {
-                    Token cur = symbolTable.get(splitter);
-                    Token reduced = new Token(LRTable.getLHS(value), cur.getLexeme());
 
-                    symbolTable.remove(splitter);                   // remove cur token
-                    symbolTable.add(splitter, reduced);             // add reduced token
+                    System.out.println(LRTable.getNumOfRHS(value));
+                    // pop number of RHS items from stack
+                    for (int i = 0; i < LRTable.getNumOfRHS(value); i++)
+                        stateStack.pop();
 
-                    stateStack.pop();
-                }
-                // goto
-                else {
-                    int nextState = Integer.parseInt(decision);
-                    stateStack.push(nextState);
+                    // accepted
+                    if (stateStack.empty()) {
+                        break;
+                    }
+
+                    int nextState = LRTable.getGoto(stateStack.peek(), LRTable.getLHS(value));              // goto table
+                    // rejected
+                    if (nextState == -1)
+                        accepted = false;
+                    else
+                        stateStack.push(nextState);
                 }
             }
 
