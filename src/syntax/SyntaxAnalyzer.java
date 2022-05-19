@@ -32,10 +32,16 @@ public class SyntaxAnalyzer implements Runnable {
             String nextSymbol = symbolTable.get(splitter).toTerminal();
             String decision = LRTable.getAction(stateStack.peek(), nextSymbol);
 
+            // epsilon move
+            if (decision == null) {
+                decision = LRTable.getAction(stateStack.peek(), "e");
+            }
+
             // invalid transition -> reject
             if (decision == null || decision.length() < 1) {
+                Token symbol = symbolTable.get(splitter);
                 System.out.println("Error occurred in file " + fileName);
-                System.out.println("Syntax error : " + symbolTable.get(splitter).getLexeme());
+                System.out.println("Syntax error : '" + symbol.getLexeme() + "' in Line " + symbol.getLineNumber() + "\n");
                 accepted = false;
             }
             else {
@@ -56,17 +62,17 @@ public class SyntaxAnalyzer implements Runnable {
                     for (int i = 0; i < LRTable.getNumOfRHS(value); i++)
                         stateStack.pop();
 
-                    // accepted
-                    if (stateStack.empty()) {
-                        break;
-                    }
-
                     int nextState = LRTable.getGoto(stateStack.peek(), LRTable.getLHS(value));              // goto table
                     // rejected
                     if (nextState == -1)
                         accepted = false;
                     else
                         stateStack.push(nextState);
+                }
+                // accept
+                else if (decision.equals("acc")) {
+                    accepted = true;
+                    break;
                 }
             }
 

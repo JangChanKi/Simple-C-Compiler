@@ -40,7 +40,7 @@ public class LexicalAnalyzer implements Runnable {
                 if (ch == '\n')
                     lineNum++;
 
-                Token result = automata.setNextInput((char) ch);
+                Token result = automata.setNextInput((char) ch, lineNum);
 
                 if (result == null) {
                     // token으로 아직 인식되지 않았을 때
@@ -69,9 +69,6 @@ public class LexicalAnalyzer implements Runnable {
                     fWriter.write(curLine);
                 }
             }
-
-            // end character
-            //automata.setNextInput((char) 0);
         } catch (IOException e) {
             e.printStackTrace();
         }

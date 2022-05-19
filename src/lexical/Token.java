@@ -15,6 +15,8 @@ public class Token {
     private final String lexeme;
     private final boolean errorOccur;
 
+    private final int lineNumber;
+
     // Map that convert token to terminal
     private final static Map<String, String> mapTerminal = Collections.unmodifiableMap(new HashMap<String, String>() {
         {
@@ -24,16 +26,18 @@ public class Token {
         }
     });
 
-    public Token(final String tokenName, final String lexeme) {
+    public Token(final String tokenName, final String lexeme, final int lineNumber) {
         this.tokenName = tokenName;
         this.lexeme = lexeme;
         this.errorOccur = false;
+        this.lineNumber = lineNumber;
     }
 
-    public Token(final String tokenName, final String lexeme, final boolean errorOccur) {
+    public Token(final String tokenName, final String lexeme, final boolean errorOccur, final int lineNumber) {
         this.tokenName = tokenName;
         this.lexeme = lexeme;
         this.errorOccur = errorOccur;
+        this.lineNumber = lineNumber;
     }
 
     public String getTokenName() {
@@ -42,6 +46,10 @@ public class Token {
 
     public String getLexeme() {
         return this.lexeme;
+    }
+
+    public int getLineNumber() {
+        return this.lineNumber;
     }
 
     public boolean getErrorOccur() {

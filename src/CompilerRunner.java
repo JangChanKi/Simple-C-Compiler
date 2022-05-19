@@ -38,13 +38,20 @@ public class CompilerRunner {
                 LexicalAnalyzer lexicalAnalyzer = new LexicalAnalyzer(args[i], fileReader, bufferedWriter);
                 lexicalAnalyzer.run();
 
+                // lexical error -> file delete
+                if (!lexicalAnalyzer.getAccepted()) {
+                    fileOut.delete();
+                    i++;
+                    continue;
+                }
+
+                // end symbol
+                Token end = new Token("$", "", -1);
+                lexicalAnalyzer.getSymbolTable().add(end);
+
                 // syntax analysis
                 SyntaxAnalyzer syntaxAnalyzer = new SyntaxAnalyzer(args[i], lexicalAnalyzer.getSymbolTable());
                 syntaxAnalyzer.run();
-
-                // error 발생 -> file delete
-                if (!lexicalAnalyzer.getAccepted() || !syntaxAnalyzer.getAccepted())
-                    fileOut.delete();
 
                 // 정상 종료
                 fileReader.close();
