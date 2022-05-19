@@ -38,3 +38,4 @@
 <RETURN, return>
 <ID, hoon>
 <SEMI, ;>
+<RBRACE, }>

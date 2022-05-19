@@ -52,7 +52,7 @@ public class SyntaxAnalyzer implements Runnable {
 
                 // action : shift and goto
                 if (op == 's') {
-                    stateStack.push(value);     // push the next state into the stack
+                    stateStack.push(value);         // push the next state into the stack
                     if (!epsilonMoved)
                         splitter++;                 // move the splitter to the right
                 }

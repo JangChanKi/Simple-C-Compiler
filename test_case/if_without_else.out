@@ -30,3 +30,4 @@
 <RETURN, return>
 <ID, res>
 <SEMI, ;>
+<RBRACE, }>
