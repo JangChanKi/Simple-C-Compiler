@@ -47,6 +47,13 @@ public class SyntaxAnalyzer implements Runnable {
                 accepted = false;
             }
             else {
+
+                // accept
+                if (decision.equals("acc")) {
+                    accepted = true;
+                    break;
+                }
+
                 char op = decision.charAt(0);                                                   // s or c
                 int value = Integer.parseInt(decision.substring(1));                  // [num]
 
@@ -69,11 +76,6 @@ public class SyntaxAnalyzer implements Runnable {
                         accepted = false;
                     else
                         stateStack.push(nextState);
-                }
-                // accept
-                else if (decision.equals("acc")) {
-                    accepted = true;
-                    break;
                 }
             }
 
