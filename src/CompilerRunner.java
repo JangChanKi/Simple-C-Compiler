@@ -1,6 +1,7 @@
 import lexical.LexicalAnalyzer;
 import lexical.Token;
 import lexical.Transition;
+import syntax.LRTable;
 import syntax.SyntaxAnalyzer;
 
 import java.io.*;
@@ -13,8 +14,11 @@ public class CompilerRunner {
         // init transition table for use in LexicalAnalyzer
         try {
             Transition.init();
+            LRTable.init();
         } catch (FileNotFoundException e) {
-            System.out.println("error : can not find the file " + Transition.FILE_NAME);
+            System.out.println("error : json file not found");
+            e.printStackTrace();
+            return;
         }
 
         while (i < args.length) {
