@@ -17,7 +17,7 @@ epsilon treats it as 'e', and rejects if there is no transition corresponding to
 public class LRTable {
 
     public static final String FILE_NAME_LR_TABLE = "." + File.separator + "table" + File.separator + "LRTable.json";
-    public static final String FILE_NAME_LHS = "." + File.separator + "table" + File.separator + "LHS.json";
+    public static final String FILE_NAME_LHS = "." + File.separator + "table" + File.separator + "Production.json";
 
     private static JSONObject lrTable;
 
