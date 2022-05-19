@@ -1,4 +1,7 @@
-import automata.Transition;
+import lexical.LexicalAnalyzer;
+import lexical.Token;
+import lexical.Transition;
+import syntax.SyntaxAnalyzer;
 
 import java.io.*;
 
@@ -22,12 +25,17 @@ public class CompilerRunner {
                 FileWriter fileWriter = new FileWriter(fileOut);
                 BufferedWriter bufferedWriter = new BufferedWriter(fileWriter);
 
+                // lexical analysis
                 LexicalAnalyzer lexicalAnalyzer = new LexicalAnalyzer(args[i], fileReader, bufferedWriter);
                 lexicalAnalyzer.run();
 
                 // error 발생 -> file delete
                 if (!lexicalAnalyzer.getAccepted())
                     fileOut.delete();
+
+                // syntax analysis
+                SyntaxAnalyzer syntaxAnalyzer = new SyntaxAnalyzer(args[i], lexicalAnalyzer.getSymbolTable());
+                syntaxAnalyzer.run();
 
                 // 정상 종료
                 fileReader.close();

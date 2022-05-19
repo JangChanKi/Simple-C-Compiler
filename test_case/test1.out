@@ -10,6 +10,7 @@
 <LBRACE, {>
 <OP, ->
 <INTEGER, 0>
+<ID, iF>
 <WHILE, while>
 <LPAREN, (>
 <INTEGER, 1>
