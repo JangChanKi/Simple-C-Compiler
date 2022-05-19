@@ -10,7 +10,12 @@ public class CompilerRunner {
     public static void main(String[] args) {
         int i = 0;
         int fail = 0;
-        Transition.init();
+        // init transition table for use in LexicalAnalyzer
+        try {
+            Transition.init();
+        } catch (FileNotFoundException e) {
+            System.out.println("error : can not find the file " + Transition.FILE_NAME);
+        }
 
         while (i < args.length) {
             try {
