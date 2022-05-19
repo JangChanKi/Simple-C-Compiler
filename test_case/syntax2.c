@@ -1,1 +1,1 @@
-int a() { return; }
+int a() { return asdf; }

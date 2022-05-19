@@ -1,0 +1,10 @@
+<VTYPE, int>
+<ID, a>
+<SEMI, ;>
+<VTYPE, int>
+<ID, b>
+<SEMI, ;>
+<VTYPE, int>
+<ID, c>
+<ASSIGN, =>
+<INTEGER, 0>

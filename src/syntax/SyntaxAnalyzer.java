@@ -26,7 +26,8 @@ public class SyntaxAnalyzer implements Runnable {
         // init
         stateStack.push(0);
 
-        while(accepted && splitter < symbolTable.size()) {
+        while(accepted &&  splitter < symbolTable.size()) {
+            boolean epsilonMoved = false;
 
             // next input symbol
             String nextSymbol = symbolTable.get(splitter).toTerminal();
@@ -35,6 +36,7 @@ public class SyntaxAnalyzer implements Runnable {
             // epsilon move
             if (decision == null) {
                 decision = LRTable.getAction(stateStack.peek(), "e");
+                epsilonMoved = true;
             }
 
             // invalid transition -> reject
@@ -48,20 +50,22 @@ public class SyntaxAnalyzer implements Runnable {
                 char op = decision.charAt(0);                                                   // s or c
                 int value = Integer.parseInt(decision.substring(1));                  // [num]
 
-                System.out.println(splitter + " " + decision);
+                //System.out.println(splitter + " " + nextSymbol + " " + decision);
                 // action : shift and goto
                 if (op == 's') {
                     stateStack.push(value);     // push the next state into the stack
-                    splitter++;                 // move the splitter to the right
+                    if (!epsilonMoved)
+                        splitter++;                 // move the splitter to the right
                 }
                 // action : reduce
                 else if (op == 'r') {
 
-                    System.out.println(LRTable.getNumOfRHS(value));
+                    //System.out.println(LRTable.getNumOfRHS(value));
                     // pop number of RHS items from stack
                     for (int i = 0; i < LRTable.getNumOfRHS(value); i++)
                         stateStack.pop();
 
+                    //System.out.println("AAQ "+stateStack.peek()+" "+LRTable.getLHS(value));
                     int nextState = LRTable.getGoto(stateStack.peek(), LRTable.getLHS(value));              // goto table
                     // rejected
                     if (nextState == -1)
