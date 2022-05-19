@@ -39,7 +39,7 @@ public class Automata {
      */
 
     @Nullable
-    public Token setNextInput(char input) {
+    public Token setNextInput(final char input, final int lineNum) {
         ArrayList<DFA> finalDFAList = new ArrayList<>();
 
         // 현재 final state에 도달한 dfa들 목록
@@ -62,11 +62,11 @@ public class Automata {
         // 모든 DFA가 reject됨
         if (DFA.rejectCount == DFAList.length) {
             if (finalDFAList.isEmpty()) {
-                return new Token("", "", true);
+                return new Token("", "",  true, lineNum);
             }
 
             // 직전 final인 것중 가장 우선순위 높은 것
-            Token ret = new Token(finalDFAList.get(0).getName(), lexeme);
+            Token ret = new Token(finalDFAList.get(0).getName(), lexeme, lineNum);
 
             // 이전 결과 저장 (- 처리를 위해서)
             String prev = finalDFAList.get(0).getName();
@@ -86,7 +86,8 @@ public class Automata {
                 String curLexeme = ret.getLexeme();
                 ret = new Token(
                         ret.getTokenName(),
-                        curLexeme.substring(1, curLexeme.length()-1)
+                        curLexeme.substring(1, curLexeme.length()-1),
+                        ret.getLineNumber()
                 );
             }
             return ret;
