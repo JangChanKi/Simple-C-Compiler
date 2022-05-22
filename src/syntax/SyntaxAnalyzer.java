@@ -5,6 +5,12 @@ import lexical.Token;
 import java.util.ArrayList;
 import java.util.Stack;
 
+/*
+Using the SLR parsing table,
+it is determined whether the tokens
+derived as a result of the lexical analyzer are syntactic accept.
+Instead of using viable prefix dfa, parse using the stack.
+ */
 public class SyntaxAnalyzer implements Runnable {
 
     private final String fileName;
