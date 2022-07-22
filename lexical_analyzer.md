@@ -31,57 +31,57 @@
 
 1번의 정규식을 가지고 DFA와 Table을 만들었습니다.
 
-![dfa table-01.jpg](/Users/kimhyeongki/Downloads/Export-6ce6663f-b385-409b-bc5a-5006ed678958/Compiler Term Project - 1 ed6098d0aa174868a17df98b8dff36cf/dfa_table-01.jpg)
+![dfa table-01.jpg](Compiler Term Project - 1 ed6098d0aa174868a17df98b8dff36cf/dfa_table-01.jpg)
 
-![dfa table-02.jpg](/Users/kimhyeongki/Downloads/Export-6ce6663f-b385-409b-bc5a-5006ed678958/Compiler Term Project - 1 ed6098d0aa174868a17df98b8dff36cf/dfa_table-02.jpg)
+![dfa table-02.jpg](Compiler Term Project - 1 ed6098d0aa174868a17df98b8dff36cf/dfa_table-02.jpg)
 
-![dfa table-03.jpg](/Users/kimhyeongki/Downloads/Export-6ce6663f-b385-409b-bc5a-5006ed678958/Compiler Term Project - 1 ed6098d0aa174868a17df98b8dff36cf/dfa_table-03.jpg)
+![dfa table-03.jpg](Compiler Term Project - 1 ed6098d0aa174868a17df98b8dff36cf/dfa_table-03.jpg)
 
-![dfa table-04.jpg](/Users/kimhyeongki/Downloads/Export-6ce6663f-b385-409b-bc5a-5006ed678958/Compiler Term Project - 1 ed6098d0aa174868a17df98b8dff36cf/dfa_table-04.jpg)
+![dfa table-04.jpg](Compiler Term Project - 1 ed6098d0aa174868a17df98b8dff36cf/dfa_table-04.jpg)
 
-![dfa table-05.jpg](/Users/kimhyeongki/Downloads/Export-6ce6663f-b385-409b-bc5a-5006ed678958/Compiler Term Project - 1 ed6098d0aa174868a17df98b8dff36cf/dfa_table-05.jpg)
+![dfa table-05.jpg](Compiler Term Project - 1 ed6098d0aa174868a17df98b8dff36cf/dfa_table-05.jpg)
 
-![dfa table-06.jpg](/Users/kimhyeongki/Downloads/Export-6ce6663f-b385-409b-bc5a-5006ed678958/Compiler Term Project - 1 ed6098d0aa174868a17df98b8dff36cf/dfa_table-06.jpg)
+![dfa table-06.jpg](Compiler Term Project - 1 ed6098d0aa174868a17df98b8dff36cf/dfa_table-06.jpg)
 
-![dfa table-07.jpg](/Users/kimhyeongki/Downloads/Export-6ce6663f-b385-409b-bc5a-5006ed678958/Compiler Term Project - 1 ed6098d0aa174868a17df98b8dff36cf/dfa_table-07.jpg)
+![dfa table-07.jpg](Compiler Term Project - 1 ed6098d0aa174868a17df98b8dff36cf/dfa_table-07.jpg)
 
-![dfa table-08.jpg](/Users/kimhyeongki/Downloads/Export-6ce6663f-b385-409b-bc5a-5006ed678958/Compiler Term Project - 1 ed6098d0aa174868a17df98b8dff36cf/dfa_table-08.jpg)
+![dfa table-08.jpg](Compiler Term Project - 1 ed6098d0aa174868a17df98b8dff36cf/dfa_table-08.jpg)
 
-![dfa table-10.jpg](/Users/kimhyeongki/Downloads/Export-6ce6663f-b385-409b-bc5a-5006ed678958/Compiler Term Project - 1 ed6098d0aa174868a17df98b8dff36cf/dfa_table-10.jpg)
+![dfa table-10.jpg](Compiler Term Project - 1 ed6098d0aa174868a17df98b8dff36cf/dfa_table-10.jpg)
 
-![dfa table-11.jpg](/Users/kimhyeongki/Downloads/Export-6ce6663f-b385-409b-bc5a-5006ed678958/Compiler Term Project - 1 ed6098d0aa174868a17df98b8dff36cf/dfa_table-11.jpg)
+![dfa table-11.jpg](Compiler Term Project - 1 ed6098d0aa174868a17df98b8dff36cf/dfa_table-11.jpg)
 
-![dfa table-12.jpg](/Users/kimhyeongki/Downloads/Export-6ce6663f-b385-409b-bc5a-5006ed678958/Compiler Term Project - 1 ed6098d0aa174868a17df98b8dff36cf/dfa_table-12.jpg)
+![dfa table-12.jpg](Compiler Term Project - 1 ed6098d0aa174868a17df98b8dff36cf/dfa_table-12.jpg)
 
-![dfa table-13.jpg](/Users/kimhyeongki/Downloads/Export-6ce6663f-b385-409b-bc5a-5006ed678958/Compiler Term Project - 1 ed6098d0aa174868a17df98b8dff36cf/dfa_table-13.jpg)
+![dfa table-13.jpg](Compiler Term Project - 1 ed6098d0aa174868a17df98b8dff36cf/dfa_table-13.jpg)
 
-![dfa table-14.jpg](/Users/kimhyeongki/Downloads/Export-6ce6663f-b385-409b-bc5a-5006ed678958/Compiler Term Project - 1 ed6098d0aa174868a17df98b8dff36cf/dfa_table-14.jpg)
+![dfa table-14.jpg](Compiler Term Project - 1 ed6098d0aa174868a17df98b8dff36cf/dfa_table-14.jpg)
 
-![dfa table-15.jpg](/Users/kimhyeongki/Downloads/Export-6ce6663f-b385-409b-bc5a-5006ed678958/Compiler Term Project - 1 ed6098d0aa174868a17df98b8dff36cf/dfa_table-15.jpg)
+![dfa table-15.jpg](Compiler Term Project - 1 ed6098d0aa174868a17df98b8dff36cf/dfa_table-15.jpg)
 
-![dfa table-16.jpg](/Users/kimhyeongki/Downloads/Export-6ce6663f-b385-409b-bc5a-5006ed678958/Compiler Term Project - 1 ed6098d0aa174868a17df98b8dff36cf/dfa_table-16.jpg)
+![dfa table-16.jpg](Compiler Term Project - 1 ed6098d0aa174868a17df98b8dff36cf/dfa_table-16.jpg)
 
-![dfa table-17.jpg](/Users/kimhyeongki/Downloads/Export-6ce6663f-b385-409b-bc5a-5006ed678958/Compiler Term Project - 1 ed6098d0aa174868a17df98b8dff36cf/dfa_table-17.jpg)
+![dfa table-17.jpg](Compiler Term Project - 1 ed6098d0aa174868a17df98b8dff36cf/dfa_table-17.jpg)
 
-![dfa table-18.jpg](/Users/kimhyeongki/Downloads/Export-6ce6663f-b385-409b-bc5a-5006ed678958/Compiler Term Project - 1 ed6098d0aa174868a17df98b8dff36cf/dfa_table-18.jpg)
+![dfa table-18.jpg](Compiler Term Project - 1 ed6098d0aa174868a17df98b8dff36cf/dfa_table-18.jpg)
 
-![dfa table-19.jpg](/Users/kimhyeongki/Downloads/Export-6ce6663f-b385-409b-bc5a-5006ed678958/Compiler Term Project - 1 ed6098d0aa174868a17df98b8dff36cf/dfa_table-19.jpg)
+![dfa table-19.jpg](Compiler Term Project - 1 ed6098d0aa174868a17df98b8dff36cf/dfa_table-19.jpg)
 
-![dfa table-20.jpg](/Users/kimhyeongki/Downloads/Export-6ce6663f-b385-409b-bc5a-5006ed678958/Compiler Term Project - 1 ed6098d0aa174868a17df98b8dff36cf/dfa_table-20.jpg)
+![dfa table-20.jpg](Compiler Term Project - 1 ed6098d0aa174868a17df98b8dff36cf/dfa_table-20.jpg)
 
-![dfa table-22.jpg](/Users/kimhyeongki/Downloads/Export-6ce6663f-b385-409b-bc5a-5006ed678958/Compiler Term Project - 1 ed6098d0aa174868a17df98b8dff36cf/dfa_table-22.jpg)
+![dfa table-22.jpg](Compiler Term Project - 1 ed6098d0aa174868a17df98b8dff36cf/dfa_table-22.jpg)
 
-![dfa table-23.jpg](/Users/kimhyeongki/Downloads/Export-6ce6663f-b385-409b-bc5a-5006ed678958/Compiler Term Project - 1 ed6098d0aa174868a17df98b8dff36cf/dfa_table-23.jpg)
+![dfa table-23.jpg](Compiler Term Project - 1 ed6098d0aa174868a17df98b8dff36cf/dfa_table-23.jpg)
 
-![dfa table-25.jpg](/Users/kimhyeongki/Downloads/Export-6ce6663f-b385-409b-bc5a-5006ed678958/Compiler Term Project - 1 ed6098d0aa174868a17df98b8dff36cf/dfa_table-25.jpg)
+![dfa table-25.jpg](Compiler Term Project - 1 ed6098d0aa174868a17df98b8dff36cf/dfa_table-25.jpg)
 
-![dfa table-26.jpg](/Users/kimhyeongki/Downloads/Export-6ce6663f-b385-409b-bc5a-5006ed678958/Compiler Term Project - 1 ed6098d0aa174868a17df98b8dff36cf/dfa_table-26.jpg)
+![dfa table-26.jpg](Compiler Term Project - 1 ed6098d0aa174868a17df98b8dff36cf/dfa_table-26.jpg)
 
-![dfa table-27.jpg](/Users/kimhyeongki/Downloads/Export-6ce6663f-b385-409b-bc5a-5006ed678958/Compiler Term Project - 1 ed6098d0aa174868a17df98b8dff36cf/dfa_table-27.jpg)
+![dfa table-27.jpg](Compiler Term Project - 1 ed6098d0aa174868a17df98b8dff36cf/dfa_table-27.jpg)
 
-![dfa table-28 2.jpg](/Users/kimhyeongki/Downloads/Export-6ce6663f-b385-409b-bc5a-5006ed678958/Compiler Term Project - 1 ed6098d0aa174868a17df98b8dff36cf/dfa_table-28_2.jpg)
+![dfa table-28 2.jpg](Compiler Term Project - 1 ed6098d0aa174868a17df98b8dff36cf/dfa_table-28_2.jpg)
 
-![dfa table-29.jpg](/Users/kimhyeongki/Downloads/Export-6ce6663f-b385-409b-bc5a-5006ed678958/Compiler Term Project - 1 ed6098d0aa174868a17df98b8dff36cf/dfa_table-29.jpg)
+![dfa table-29.jpg](Compiler Term Project - 1 ed6098d0aa174868a17df98b8dff36cf/dfa_table-29.jpg)
 
 ## 3. How our lexical analyzer works for Recognizing tokens
 

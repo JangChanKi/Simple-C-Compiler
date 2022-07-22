@@ -56,15 +56,15 @@ RETURN -> return FACTOR semi
 
 먼저 **ACTION Table**입니다.
 
-![스크린샷 2022-05-22 20.18.57.png](/Users/kimhyeongki/Downloads/Export-ede83240-df8b-442a-880a-72fdf98c898d/Compiler Term Project - 2 139de959fbb847e991d166386b24fb1b/스크린샷_2022-05-22_20.18.57.png)
+![스크린샷 2022-05-22 20.18.57.png](Compiler Term Project - 2 139de959fbb847e991d166386b24fb1b/스크린샷_2022-05-22_20.18.57.png)
 
-![스크린샷 2022-05-22 20.20.09.png](/Users/kimhyeongki/Downloads/Export-ede83240-df8b-442a-880a-72fdf98c898d/Compiler Term Project - 2 139de959fbb847e991d166386b24fb1b/스크린샷_2022-05-22_20.20.09.png)
+![스크린샷 2022-05-22 20.20.09.png](Compiler Term Project - 2 139de959fbb847e991d166386b24fb1b/스크린샷_2022-05-22_20.20.09.png)
 
 다음으로는 **GOTO Table**입니다.
 
-![스크린샷 2022-05-22 20.21.20.png](/Users/kimhyeongki/Downloads/Export-ede83240-df8b-442a-880a-72fdf98c898d/Compiler Term Project - 2 139de959fbb847e991d166386b24fb1b/스크린샷_2022-05-22_20.21.20.png)
+![스크린샷 2022-05-22 20.21.20.png](Compiler Term Project - 2 139de959fbb847e991d166386b24fb1b/스크린샷_2022-05-22_20.21.20.png)
 
-![스크린샷 2022-05-22 20.21.54.png](/Users/kimhyeongki/Downloads/Export-ede83240-df8b-442a-880a-72fdf98c898d/Compiler Term Project - 2 139de959fbb847e991d166386b24fb1b/스크린샷_2022-05-22_20.21.54.png)
+![스크린샷 2022-05-22 20.21.54.png](Compiler Term Project - 2 139de959fbb847e991d166386b24fb1b/스크린샷_2022-05-22_20.21.54.png)
 
 이런식으로 SLR Table을 이용하여 LRTable.json 파일에 옮겨 주었습니다.
 
@@ -129,7 +129,7 @@ RETURN -> return FACTOR semi
 
 ## 3. Project Structure
 
-![클래스 관계.png](/Users/kimhyeongki/Downloads/Export-ede83240-df8b-442a-880a-72fdf98c898d/Compiler Term Project - 2 139de959fbb847e991d166386b24fb1b/클래스_관계.png)
+![클래스 관계.png](Compiler Term Project - 2 139de959fbb847e991d166386b24fb1b/클래스_관계.png)
 
 - CompilerRunner : 매개변수로 전달된 컴파일 대상 파일에 대해 프로그램 실행을 담당합니다. I/O 작업에 필요한 객체를 담당합니다.
   - LexicalAnalyzer : 대상 파일에서 다음 글자를 읽어와서 오토마타가 해당하는 상태로 이동하는 것을 담당합니다.
@@ -419,7 +419,7 @@ int test2(int aa){
 
 이 경우엔 주어진 CFG에 적합한 문법이기 때문에 이 test case를 test해보면 
 
-![스크린샷 2022-05-22 21.26.39.png](/Users/kimhyeongki/Downloads/Export-ede83240-df8b-442a-880a-72fdf98c898d/Compiler Term Project - 2 139de959fbb847e991d166386b24fb1b/스크린샷_2022-05-22_21.26.39.png)
+![스크린샷 2022-05-22 21.26.39.png](Compiler Term Project - 2 139de959fbb847e991d166386b24fb1b/스크린샷_2022-05-22_21.26.39.png)
 
 이런식으로 “Successfully accepted for file function_test1.c” 라고 Console에 출력됩니다.
 
@@ -446,7 +446,7 @@ int isEven(int num) {
 
 이 경우에 저희는 
 
-![스크린샷 2022-05-22 21.30.58.png](/Users/kimhyeongki/Downloads/Export-ede83240-df8b-442a-880a-72fdf98c898d/Compiler Term Project - 2 139de959fbb847e991d166386b24fb1b/스크린샷_2022-05-22_21.30.58.png)
+![스크린샷 2022-05-22 21.30.58.png](Compiler Term Project - 2 139de959fbb847e991d166386b24fb1b/스크린샷_2022-05-22_21.30.58.png)
 
 이런식으로 Line 3에서 return이라는 input때문에 Syntax Error가 발생했다는 문구를 Console에 출력하였습니다.
 
@@ -468,7 +468,7 @@ char block(char a, char b, char c){
 
 이 경우 block 함수에 return이 없기 때문에 Syntax Error가 Detect 됩니다.
 
-![스크린샷 2022-05-22 21.50.46.png](/Users/kimhyeongki/Downloads/Export-ede83240-df8b-442a-880a-72fdf98c898d/Compiler Term Project - 2 139de959fbb847e991d166386b24fb1b/스크린샷_2022-05-22_21.50.46.png)
+![스크린샷 2022-05-22 21.50.46.png](Compiler Term Project - 2 139de959fbb847e991d166386b24fb1b/스크린샷_2022-05-22_21.50.46.png)
 
 함수 블록 마지막에는 return이 등장해야 하는데, ‘}’ input이 인식되었기 때문에 해당 라인 11에서 Syntax error가 발생하였다는 문구를 Console에 출력하였습니다.
 
@@ -482,7 +482,7 @@ int c = 0;
 
 변수 선언문에서 초기화를 진행하는 경우 Syntax Error가 발생하는 Test Case입니다.
 
-![스크린샷 2022-05-22 21.50.07.png](/Users/kimhyeongki/Downloads/Export-ede83240-df8b-442a-880a-72fdf98c898d/Compiler Term Project - 2 139de959fbb847e991d166386b24fb1b/스크린샷_2022-05-22_21.50.07.png)
+![스크린샷 2022-05-22 21.50.07.png](Compiler Term Project - 2 139de959fbb847e991d166386b24fb1b/스크린샷_2022-05-22_21.50.07.png)
 
 3번 라인에서 ‘=’으로 assign을 진행하는 부분에서 Syntax erorr가 발생했다는 문구를 Console에 출력하였습니다.
 
@@ -499,7 +499,7 @@ int nonelse(int a, int b){
 
 if문만 있고 else문은 없는 경우 Syntax Error가 발생하는 Test Case입니다.
 
-![스크린샷 2022-05-22 22.11.27.png](/Users/kimhyeongki/Downloads/Export-ede83240-df8b-442a-880a-72fdf98c898d/Compiler Term Project - 2 139de959fbb847e991d166386b24fb1b/스크린샷_2022-05-22_22.11.27.png)
+![스크린샷 2022-05-22 22.11.27.png](Compiler Term Project - 2 139de959fbb847e991d166386b24fb1b/스크린샷_2022-05-22_22.11.27.png)
 
 if 문 뒤에는 else문이 등장해야 하는데 ‘return’ input이 인식되었기 때문에 라인 5에서 Syntax Error가 발생하였다는 문구를 Console에 출력하였습니다.
 
@@ -527,7 +527,7 @@ char block(char a, char b, char c){
 
 이 경우 block 함수에 return이 없기 때문에 Syntax Error가 Detect 됩니다.
 
-![스크린샷 2022-05-22 21.50.46.png](/Users/kimhyeongki/Downloads/Export-ede83240-df8b-442a-880a-72fdf98c898d/Compiler Term Project - 2 139de959fbb847e991d166386b24fb1b/스크린샷_2022-05-22_21.50.46.png)
+![스크린샷 2022-05-22 21.50.46.png](Compiler Term Project - 2 139de959fbb847e991d166386b24fb1b/스크린샷_2022-05-22_21.50.46.png)
 
 함수 블록 마지막에는 return이 등장해야 하는데, ‘}’ input이 인식되었기 때문에 해당 라인 11에서 Syntax error가 발생하였다는 문구를 Console에 출력하였습니다.
 
