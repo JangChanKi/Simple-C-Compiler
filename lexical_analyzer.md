@@ -31,57 +31,57 @@
 
 1번의 정규식을 가지고 DFA와 Table을 만들었습니다.
 
-![dfa table-01.jpg](Compiler Term Project - 1 ed6098d0aa174868a17df98b8dff36cf/dfa_table-01.jpg)
+![dfa table-01.jpg](./Compiler Term Project - 1 ed6098d0aa174868a17df98b8dff36cf/dfa_table-01.jpg)
 
-![dfa table-02.jpg](Compiler Term Project - 1 ed6098d0aa174868a17df98b8dff36cf/dfa_table-02.jpg)
+![dfa table-02.jpg](./Compiler Term Project - 1 ed6098d0aa174868a17df98b8dff36cf/dfa_table-02.jpg)
 
-![dfa table-03.jpg](Compiler Term Project - 1 ed6098d0aa174868a17df98b8dff36cf/dfa_table-03.jpg)
+![dfa table-03.jpg](./Compiler Term Project - 1 ed6098d0aa174868a17df98b8dff36cf/dfa_table-03.jpg)
 
-![dfa table-04.jpg](Compiler Term Project - 1 ed6098d0aa174868a17df98b8dff36cf/dfa_table-04.jpg)
+![dfa table-04.jpg](./Compiler Term Project - 1 ed6098d0aa174868a17df98b8dff36cf/dfa_table-04.jpg)
 
-![dfa table-05.jpg](Compiler Term Project - 1 ed6098d0aa174868a17df98b8dff36cf/dfa_table-05.jpg)
+![dfa table-05.jpg](./Compiler Term Project - 1 ed6098d0aa174868a17df98b8dff36cf/dfa_table-05.jpg)
 
-![dfa table-06.jpg](Compiler Term Project - 1 ed6098d0aa174868a17df98b8dff36cf/dfa_table-06.jpg)
+![dfa table-06.jpg](./Compiler Term Project - 1 ed6098d0aa174868a17df98b8dff36cf/dfa_table-06.jpg)
 
-![dfa table-07.jpg](Compiler Term Project - 1 ed6098d0aa174868a17df98b8dff36cf/dfa_table-07.jpg)
+![dfa table-07.jpg](./Compiler Term Project - 1 ed6098d0aa174868a17df98b8dff36cf/dfa_table-07.jpg)
 
-![dfa table-08.jpg](Compiler Term Project - 1 ed6098d0aa174868a17df98b8dff36cf/dfa_table-08.jpg)
+![dfa table-08.jpg](./Compiler Term Project - 1 ed6098d0aa174868a17df98b8dff36cf/dfa_table-08.jpg)
 
-![dfa table-10.jpg](Compiler Term Project - 1 ed6098d0aa174868a17df98b8dff36cf/dfa_table-10.jpg)
+![dfa table-10.jpg](./Compiler Term Project - 1 ed6098d0aa174868a17df98b8dff36cf/dfa_table-10.jpg)
 
-![dfa table-11.jpg](Compiler Term Project - 1 ed6098d0aa174868a17df98b8dff36cf/dfa_table-11.jpg)
+![dfa table-11.jpg](./Compiler Term Project - 1 ed6098d0aa174868a17df98b8dff36cf/dfa_table-11.jpg)
 
-![dfa table-12.jpg](Compiler Term Project - 1 ed6098d0aa174868a17df98b8dff36cf/dfa_table-12.jpg)
+![dfa table-12.jpg](./Compiler Term Project - 1 ed6098d0aa174868a17df98b8dff36cf/dfa_table-12.jpg)
 
-![dfa table-13.jpg](Compiler Term Project - 1 ed6098d0aa174868a17df98b8dff36cf/dfa_table-13.jpg)
+![dfa table-13.jpg](./Compiler Term Project - 1 ed6098d0aa174868a17df98b8dff36cf/dfa_table-13.jpg)
 
-![dfa table-14.jpg](Compiler Term Project - 1 ed6098d0aa174868a17df98b8dff36cf/dfa_table-14.jpg)
+![dfa table-14.jpg](./Compiler Term Project - 1 ed6098d0aa174868a17df98b8dff36cf/dfa_table-14.jpg)
 
-![dfa table-15.jpg](Compiler Term Project - 1 ed6098d0aa174868a17df98b8dff36cf/dfa_table-15.jpg)
+![dfa table-15.jpg](./Compiler Term Project - 1 ed6098d0aa174868a17df98b8dff36cf/dfa_table-15.jpg)
 
-![dfa table-16.jpg](Compiler Term Project - 1 ed6098d0aa174868a17df98b8dff36cf/dfa_table-16.jpg)
+![dfa table-16.jpg](./Compiler Term Project - 1 ed6098d0aa174868a17df98b8dff36cf/dfa_table-16.jpg)
 
-![dfa table-17.jpg](Compiler Term Project - 1 ed6098d0aa174868a17df98b8dff36cf/dfa_table-17.jpg)
+![dfa table-17.jpg](./Compiler Term Project - 1 ed6098d0aa174868a17df98b8dff36cf/dfa_table-17.jpg)
 
-![dfa table-18.jpg](Compiler Term Project - 1 ed6098d0aa174868a17df98b8dff36cf/dfa_table-18.jpg)
+![dfa table-18.jpg](./Compiler Term Project - 1 ed6098d0aa174868a17df98b8dff36cf/dfa_table-18.jpg)
 
-![dfa table-19.jpg](Compiler Term Project - 1 ed6098d0aa174868a17df98b8dff36cf/dfa_table-19.jpg)
+![dfa table-19.jpg](./Compiler Term Project - 1 ed6098d0aa174868a17df98b8dff36cf/dfa_table-19.jpg)
 
-![dfa table-20.jpg](Compiler Term Project - 1 ed6098d0aa174868a17df98b8dff36cf/dfa_table-20.jpg)
+![dfa table-20.jpg](./Compiler Term Project - 1 ed6098d0aa174868a17df98b8dff36cf/dfa_table-20.jpg)
 
-![dfa table-22.jpg](Compiler Term Project - 1 ed6098d0aa174868a17df98b8dff36cf/dfa_table-22.jpg)
+![dfa table-22.jpg](./Compiler Term Project - 1 ed6098d0aa174868a17df98b8dff36cf/dfa_table-22.jpg)
 
-![dfa table-23.jpg](Compiler Term Project - 1 ed6098d0aa174868a17df98b8dff36cf/dfa_table-23.jpg)
+![dfa table-23.jpg](./Compiler Term Project - 1 ed6098d0aa174868a17df98b8dff36cf/dfa_table-23.jpg)
 
-![dfa table-25.jpg](Compiler Term Project - 1 ed6098d0aa174868a17df98b8dff36cf/dfa_table-25.jpg)
+![dfa table-25.jpg](./Compiler Term Project - 1 ed6098d0aa174868a17df98b8dff36cf/dfa_table-25.jpg)
 
-![dfa table-26.jpg](Compiler Term Project - 1 ed6098d0aa174868a17df98b8dff36cf/dfa_table-26.jpg)
+![dfa table-26.jpg](./Compiler Term Project - 1 ed6098d0aa174868a17df98b8dff36cf/dfa_table-26.jpg)
 
-![dfa table-27.jpg](Compiler Term Project - 1 ed6098d0aa174868a17df98b8dff36cf/dfa_table-27.jpg)
+![dfa table-27.jpg](./Compiler Term Project - 1 ed6098d0aa174868a17df98b8dff36cf/dfa_table-27.jpg)
 
-![dfa table-28 2.jpg](Compiler Term Project - 1 ed6098d0aa174868a17df98b8dff36cf/dfa_table-28_2.jpg)
+![dfa table-28 2.jpg](./Compiler Term Project - 1 ed6098d0aa174868a17df98b8dff36cf/dfa_table-28_2.jpg)
 
-![dfa table-29.jpg](Compiler Term Project - 1 ed6098d0aa174868a17df98b8dff36cf/dfa_table-29.jpg)
+![dfa table-29.jpg](./Compiler Term Project - 1 ed6098d0aa174868a17df98b8dff36cf/dfa_table-29.jpg)
 
 ## 3. How our lexical analyzer works for Recognizing tokens
 
@@ -150,7 +150,7 @@
 
 ### 전체적인 작동방식
 
-![이름 없는 노트북 (/Users/kimhyeongki/Github/Simple-C-Compiler/Compiler Term Project - 1 ed6098d0aa174868a17df98b8dff36cf/이름_없는_노트북_(2)-1.jpg)-1.jpg](Compiler%20Term%20Project%20-%201%20ed6098d0aa174868a17df98b8dff36cf/%E1%84%8B%E1%85%B5%E1%84%85%E1%85%B3%E1%86%B7_%E1%84%8B%E1%85%A5%E1%86%B9%E1%84%82%E1%85%B3%E1%86%AB_%E1%84%82%E1%85%A9%E1%84%90%E1%85%B3%E1%84%87%E1%85%AE%E1%86%A8_(2)-1.jpg)
+![이름 없는 노트북 (./Compiler Term Project - 1 ed6098d0aa174868a17df98b8dff36cf/이름_없는_노트북_(2)-1.jpg)-1.jpg](Compiler%20Term%20Project%20-%201%20ed6098d0aa174868a17df98b8dff36cf/%E1%84%8B%E1%85%B5%E1%84%85%E1%85%B3%E1%86%B7_%E1%84%8B%E1%85%A5%E1%86%B9%E1%84%82%E1%85%B3%E1%86%AB_%E1%84%82%E1%85%A9%E1%84%90%E1%85%B3%E1%84%87%E1%85%AE%E1%86%A8_(2)-1.jpg)
 
 ### Lexical Analyzer class의 구현
 
